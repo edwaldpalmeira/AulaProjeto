@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "591576204174",
+    "project_id": "listacompras-90f70",
+    "storage_bucket": "listacompras-90f70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591576204174:android:93a1cf7a469cc2a49adadf",
+        "android_client_info": {
+          "package_name": "com.example.aulaprojeto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591576204174-tnf96ngt4ortv84j2l9gdii5p7luqe6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC34QJnWs65v3LzbFZi4DI8BIM7XU30w8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591576204174-tnf96ngt4ortv84j2l9gdii5p7luqe6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
