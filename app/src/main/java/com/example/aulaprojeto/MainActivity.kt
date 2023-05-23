@@ -3,15 +3,20 @@ package com.example.aulaprojeto
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
+import android.widget.EditText
 import android.widget.Toast
 import com.example.aulaprojeto.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
     /*Adicionando o Binding*/
 
     lateinit var binding: ActivityMainBinding
+    lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         tratarLogin()
+
+        binding.fab.setOnClickListener{
+            novoItem()
+        }
 
     /* Finalizndo o binding*/
     }
@@ -55,4 +64,25 @@ class MainActivity : AppCompatActivity() {
             finishAffinity()
         }
     }
+
+    fun configurarBase(){
+        FirebaseAuth.getInstance().currentUser?.let{
+            database = FirebaseDatabase.getInstance().reference.child(it.uid)
+        }
+    }
+
+    fun novoItem(){
+
+        val editText = EditText(this)
+        editText.hint = "Nome do item"
+
+        AlertDialog.Builder(this)
+            .setTitle("Novo Item")
+            .setView(editText)
+            .setPositiveButton("Inserir", null)
+            .create()
+            .show()
+    }
+
+
 }
